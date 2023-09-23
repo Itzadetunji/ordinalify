@@ -4,7 +4,7 @@
 
 [![license](https://img.shields.io/npm/l/react-switch.svg)](https://github.com/your-username/react-switch/blob/master/LICENSE)
 
-React Switch is a customizable switch component for React applications.
+React Ordinals is a package used to get number ordinals in react apps
 
 ## Installation
 
@@ -20,7 +20,7 @@ Install the package using yarn:
 yarn add react-ordinals
 ```
 
-Install the package using yarn:
+Install the package using bun:
 
 ```shell
 bun add react-ordinals
