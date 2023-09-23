@@ -1,7 +1,7 @@
-export const convertTensToTensFirstPosition: (
-	num: number,
-	subPosition: string
-) => string = (num, subPosition) => {
+export const convertTensToWords: (num: number) => string = (
+	num
+) => {
+	let subPosition: string;
 	switch (num) {
 		case 20:
 			subPosition = "twenty";
@@ -34,10 +34,8 @@ export const convertTensToTensFirstPosition: (
 	return subPosition;
 };
 
-export const convertNumbersToWords: (
-	num: number,
-	position: string
-) => string = (num, position) => {
+export const convertNumbersToWords: (num: number) => string = (num) => {
+	let position: string;
 	switch (num) {
 		case 1:
 			position = "first";
