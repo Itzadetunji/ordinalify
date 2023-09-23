@@ -26,25 +26,25 @@ Install the package using bun:
 bun add react-ordinals
 ```
 
-<!-- ## Usage
+## Usage
 
-Here's a basic example of how to use `@usmangurowa/react-switch`:
+Here's a basic example of how to use `react-ordinals`:
 
 ```jsx
 import React from "react";
-import { Switch, Case } from "@usmangurowa/react-switch";
+import { WordOrdinal } from "react-ordinals";
 
 const App = () => {
-  const condition = true;
+  const numberRange = Array.from({length: 50}, (_, index) => index + 1);
   return (
-    <Switch case={condition.toString()}>
-      <Case when="true">
-        <h1>This is displayed when the condition is true</h1>
-      </Case>
-      <Case when="false">
-        <h1>This is displayed when the condition is false</h1>
-      </Case>
-    </Switch>
+    <section>
+      {numberRange.map((number) => (
+        <WordOrdinal
+          number={number}
+          shouldBeTitleCase={true}
+        />  
+      ))}
+    </section>
   );
 };
 
@@ -53,87 +53,31 @@ export default App;
 
 ## API
 
-### Switch
+### WordOrdinal
 
-The `Switch` component renders the first matching `Case` component based on the provided condition.
-
-**Props:**
-
-- `case` (optional): The condition to match against. Accepts a string.
-- `children`: The `Case` components to render.
-
-### Case
-
-The `Case` component represents a case within the `Switch` component.
+The `WordOrdinal` component is responsible for converting numbers into their ordinal form. 
 
 **Props:**
 
-- `when` (optional): The condition to match against. Accepts a string.
-- `case` (optional): Same thing as `when`.
-- `component` (optional): A custom component to render when the condition matches.
-- `children`: The content to render when the condition matches.
+- `number` (required): The number to be converted into an ordinal form.
+- `shouldBeTitleCase` (required): A boolean indicating whether the result should be in title 
 
 ## Examples
 
-### Example 1: Toggle Switch
+### Example 1: Word Ordinal
 
 ```jsx
-import React, { useState } from "react";
-import { Switch, Case } from "@usmangurowa/react-switch";
-
-const ToggleSwitch = () => {
-  const [isOn, setIsOn] = useState(false);
-
-  const handleToggle = () => {
-    setIsOn(!isOn);
-  };
-
+const App = () => {
   return (
-    <Switch case={isOn}>
-      <Case when={true}>
-        <button onClick={handleToggle}>ON</button>
-      </Case>
-      <Case when={false}>
-        <button onClick={handleToggle}>OFF</button>
-      </Case>
-    </Switch>
+    <section>
+      <WordOrdinal
+        number={14}
+        shouldBeTitleCase={false}
+      />  
+    </section>
   );
 };
-
-export default ToggleSwitch;
 ```
-
-### Example 2: User Role Switch
-
-```jsx
-import React, { useState } from "react";
-import { Switch, Case } from "@usmangurowa/react-switch";
-
-const UserRoleSwitch = () => {
-  const [userRole, setUserRole] = useState("user");
-
-  const handleChangeUserRole = (role) => {
-    setUserRole(role);
-  };
-
-  return (
-    <Switch case={userRole}>
-      <Case when="admin">
-        <button onClick={() => handleChangeUserRole("user")}>
-          Switch to User
-        </button>
-      </Case>
-      <Case when="user">
-        <button onClick={() => handleChangeUserRole("admin")}>
-          Switch to Admin
-        </button>
-      </Case>
-    </Switch>
-  );
-};
-
-export default UserRoleSwitch;
-``` -->
 
 ## Contributing
 
