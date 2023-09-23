@@ -1,8 +1,8 @@
-# React Switch
+# React Ordinals
 
-[![npm version](https://img.shields.io/npm/v/react-switch.svg)](https://www.npmjs.com/package/react-switch)
+[![npm version](https://img.shields.io/npm/v/react-switch.svg)](https://www.npmjs.com/package/react-ordinals)
 
-[![license](https://img.shields.io/npm/l/react-switch.svg)](https://github.com/your-username/react-switch/blob/master/LICENSE)
+[![license](https://img.shields.io/npm/l/react-switch.svg)](https://github.com/your-username/react-ordinals/blob/main/LICENSE)
 
 React Ordinals is a package used to get number ordinals in react apps
 
