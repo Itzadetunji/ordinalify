@@ -1,6 +1,4 @@
-export const convertTensToWords: (num: number) => string = (
-	num
-) => {
+export const convertTensToWords: (num: number) => string = (num) => {
 	let subPosition: string;
 	switch (num) {
 		case 20:
@@ -125,4 +123,23 @@ export const convertNumbersToWords: (num: number) => string = (num) => {
 			position = "invalid";
 	}
 	return position;
+};
+
+export const convertNumberToNumberOrdinal = (
+	number: number,
+	isUppercase: boolean
+) => {
+	let numSuffix = "th";
+
+	if (number % 10 === 1) {
+		numSuffix = "st";
+	} else if (number % 10 === 2) {
+		numSuffix = "nd";
+	} else if (number % 10 === 3) {
+		numSuffix = "rd";
+	}
+
+	return isUppercase
+		? number.toString().toUpperCase() + numSuffix
+		: number.toString() + numSuffix;
 };
