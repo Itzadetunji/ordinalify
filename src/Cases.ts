@@ -140,6 +140,6 @@ export const convertNumberToNumberOrdinal = (
 	}
 
 	return isUppercase
-		? number.toString().toUpperCase() + numSuffix
+		? number.toString() + numSuffix.toUpperCase()
 		: number.toString() + numSuffix;
 };
