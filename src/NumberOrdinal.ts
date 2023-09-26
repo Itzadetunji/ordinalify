@@ -1,6 +1,10 @@
 import { convertNumberToNumberOrdinal } from "./Cases";
 
-const NumberOrdinal = (number: number) => {
+export interface NumberOrdinalProps {
+	number: number;
+}
+
+const NumberOrdinal = ({ number }: NumberOrdinalProps) => {
 	return convertNumberToNumberOrdinal(number);
 };
 

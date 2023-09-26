@@ -1,6 +1,17 @@
-import { convertNumbersToWords, convertTensToWords } from "./Cases";
+import {
+	convertNumbersToWords,
+	convertTensToWords,
+	firstWordToTitle,
+} from "./Cases";
 
-const WordOrdinal = (number: number) => {
+export interface WordOrdinalProps {
+	number: number;
+	options?: {
+		capitalizeFirstLetter: boolean;
+	};
+}
+
+const WordOrdinal = ({ number, options }: WordOrdinalProps) => {
 	const convertNumberToOrdinal = (number: number) => {
 		let position: string;
 		if (number > 90) return "Invalid range";
@@ -14,7 +25,9 @@ const WordOrdinal = (number: number) => {
 		return position;
 	};
 
-	return convertNumberToOrdinal(number);
+	return options.capitalizeFirstLetter
+		? firstWordToTitle(convertNumberToOrdinal(number))
+		: convertNumberToOrdinal(number);
 };
 
 export default WordOrdinal;

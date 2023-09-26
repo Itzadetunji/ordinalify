@@ -138,3 +138,18 @@ export const convertNumberToNumberOrdinal = (number: number) => {
 
 	return number.toString() + numSuffix;
 };
+
+
+export const firstWordToTitle: (str: string, separator?: string) => string = (
+	str,
+	separator = ""
+): string => {
+	return (
+		str.split("")[0].toUpperCase() +
+		str
+			.slice(1)
+			.split(separator || " ")
+			.join(" ")
+			.toLowerCase()
+	);
+};
