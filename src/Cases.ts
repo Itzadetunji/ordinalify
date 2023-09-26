@@ -125,10 +125,7 @@ export const convertNumbersToWords: (num: number) => string = (num) => {
 	return position;
 };
 
-export const convertNumberToNumberOrdinal = (
-	number: number,
-	isUppercase: boolean
-) => {
+export const convertNumberToNumberOrdinal = (number: number) => {
 	let numSuffix = "th";
 
 	if (number % 10 === 1) {
@@ -139,7 +136,5 @@ export const convertNumberToNumberOrdinal = (
 		numSuffix = "rd";
 	}
 
-	return isUppercase
-		? number.toString() + numSuffix.toUpperCase()
-		: number.toString() + numSuffix;
+	return number.toString() + numSuffix;
 };

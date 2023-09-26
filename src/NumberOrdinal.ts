@@ -1,8 +1,7 @@
-import React from "react";
 import { convertNumberToNumberOrdinal } from "./Cases";
 
-const NumberOrdinal = (number: number, isUppercase: boolean) => {
-	return convertNumberToNumberOrdinal(number, isUppercase);
+const NumberOrdinal = (number: number) => {
+	return convertNumberToNumberOrdinal(number);
 };
 
 export default NumberOrdinal;

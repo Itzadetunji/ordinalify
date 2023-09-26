@@ -1,7 +1,6 @@
 declare module "NumberOrdinal" {
 	interface NumberOrdinalProps {
-			number: number;
-			isUpperCase: boolean;
+		number: number;
 	}
 
 	const NumberOrdinal: (props: NumberOrdinalProps) => string;

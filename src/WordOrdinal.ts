@@ -1,15 +1,6 @@
-import React from "react";
 import { convertNumbersToWords, convertTensToWords } from "./Cases";
 
-interface WordOrdinalProps {
-	number: number;
-	shouldBeTitleCase: boolean;
-}
-
-const WordOrdinal: React.FC<WordOrdinalProps> = ({
-	number,
-	shouldBeTitleCase,
-}) => {
+const WordOrdinal = (number: number, isTitlecase: boolean) => {
 	const convertNumberToOrdinal = (
 		number: number,
 		shouldBeTitleCase: boolean
@@ -23,11 +14,10 @@ const WordOrdinal: React.FC<WordOrdinalProps> = ({
 		} else {
 			position = convertNumbersToWords(number);
 		}
-
 		return shouldBeTitleCase ? toTitleCase(position) : position;
 	};
 
-	return <span>{convertNumberToOrdinal(number, shouldBeTitleCase)}</span>;
+	return convertNumberToOrdinal(number, isTitlecase);
 };
 
 const toTitleCase = (string: string) => {
