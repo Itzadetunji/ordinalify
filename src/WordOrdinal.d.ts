@@ -1,12 +1,9 @@
 declare module "WordOrdinal" {
-	import React from "react";
-
 	interface WordOrdinalProps {
 		number: number;
-		shouldBeTitleCase: boolean;
 	}
 
-	const WordOrdinal: React.FC<WordOrdinalProps>;
+	const WordOrdinal: (props: WordOrdinalProps) => string;
 
 	export default WordOrdinal;
 }

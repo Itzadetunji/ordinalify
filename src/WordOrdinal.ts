@@ -1,10 +1,7 @@
 import { convertNumbersToWords, convertTensToWords } from "./Cases";
 
-const WordOrdinal = (number: number, isTitlecase: boolean) => {
-	const convertNumberToOrdinal = (
-		number: number,
-		shouldBeTitleCase: boolean
-	) => {
+const WordOrdinal = (number: number) => {
+	const convertNumberToOrdinal = (number: number) => {
 		let position: string;
 		if (number > 90) return "Invalid range";
 		if (number > 20 && number % 10 !== 0) {
@@ -14,17 +11,10 @@ const WordOrdinal = (number: number, isTitlecase: boolean) => {
 		} else {
 			position = convertNumbersToWords(number);
 		}
-		return shouldBeTitleCase ? toTitleCase(position) : position;
+		return position;
 	};
 
-	return convertNumberToOrdinal(number, isTitlecase);
-};
-
-const toTitleCase = (string: string) => {
-	return string
-		.split(" ")
-		.map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
-		.join(" ");
+	return convertNumberToOrdinal(number);
 };
 
 export default WordOrdinal;
