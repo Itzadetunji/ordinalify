@@ -1,12 +1,15 @@
 import { convertNumberToNumberOrdinal } from "./Cases";
 
-interface WordOrdinalOptions {
-	capitalize: boolean;
+interface NumberOrdinalOptions {
+	capitalize?: boolean;
+	lowercase?: boolean;
+	subscript?: boolean;
+	superscript?: boolean;
 }
 
 export type NumberOrdinalType = (
 	number: number,
-	options?: WordOrdinalOptions
+	options?: NumberOrdinalOptions
 ) => string;
 
 const NumberOrdinal: NumberOrdinalType = (number, options) => {
@@ -17,14 +20,7 @@ const NumberOrdinal: NumberOrdinalType = (number, options) => {
 
 export default NumberOrdinal;
 
-interface TextOptions {
-	capitalize?: boolean;
-	lowercase?: boolean;
-	subscript?: boolean;
-	superscript?: boolean;
-}
-
-type ResultTransformer = (text: string, options?: TextOptions) => string;
+type ResultTransformer = (text: string, options?: NumberOrdinalOptions) => string;
 
 const transformText: ResultTransformer = (text, options) => {
 	if (options) {
