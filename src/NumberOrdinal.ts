@@ -10,7 +10,9 @@ export type NumberOrdinalType = (
 ) => string;
 
 const NumberOrdinal: NumberOrdinalType = (number, options) => {
-	return transformText(convertNumberToNumberOrdinal(number), options);
+	return number <= 0
+		? "Invalid range"
+		: transformText(convertNumberToNumberOrdinal(number), options);
 };
 
 export default NumberOrdinal;

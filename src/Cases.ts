@@ -127,7 +127,7 @@ export const convertNumbersToWords: (num: number) => string = (num) => {
 
 export const convertNumberToNumberOrdinal = (number: number) => {
 	let numSuffix = "th";
-
+	number = Math.floor(number);
 	if (number % 10 === 1) {
 		numSuffix = "st";
 	} else if (number % 10 === 2) {
@@ -138,7 +138,6 @@ export const convertNumberToNumberOrdinal = (number: number) => {
 
 	return number.toString() + numSuffix;
 };
-
 
 export const firstWordToTitle: (str: string, separator?: string) => string = (
 	str,
