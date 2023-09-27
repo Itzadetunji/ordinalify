@@ -20,7 +20,10 @@ const NumberOrdinal: NumberOrdinalType = (number, options) => {
 
 export default NumberOrdinal;
 
-type ResultTransformer = (text: string, options?: NumberOrdinalOptions) => string;
+type ResultTransformer = (
+	text: string,
+	options?: NumberOrdinalOptions
+) => string;
 
 const transformText: ResultTransformer = (text, options) => {
 	if (options) {
@@ -33,11 +36,15 @@ const transformText: ResultTransformer = (text, options) => {
 		}
 
 		if (options.subscript) {
-			text = `<sub>${text}</sub>`;
+			const sub = text.slice(text.length - 2);
+			const prefix = text.slice(0, text.length - 2);
+			text = `${prefix}<sub>${sub}</sub>`;
 		}
 
 		if (options.superscript) {
-			text = `<sup>${text}</sup>`;
+			const sup = text.slice(text.length - 2);
+			const newText = text.slice(0, text.length - 2);
+			text = `${newText}<sup>${sup}</sup>`;
 		}
 	}
 
