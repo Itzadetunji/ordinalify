@@ -30,22 +30,37 @@ bun add react-ordinals
 
 Here's a basic example of how to use `react-ordinals`:
 
+Word Ordinals e.g("First", "Second", "Third", "Fourth"):
+
 ```jsx
 import React from "react";
 import { WordOrdinal } from "react-ordinals";
 
 const App = () => {
-  const numberRange = Array.from({length: 50}, (_, index) => index + 1);
-  return (
-    <section>
-      {numberRange.map((number) => (
-        <WordOrdinal
-          number={number}
-          shouldBeTitleCase={true}
-        />  
-      ))}
-    </section>
-  );
+	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
+	return (
+		<section>
+			{numberRange.map((number) =>
+				WordOrdinal(number, { capitalizeFirstLetter: true })
+			)}
+		</section>
+	);
+};
+
+export default App;
+```
+
+Number Ordinals e.g("1st", "2nd", "3rd", "4th"):
+
+```jsx
+import React from "react";
+import { NumberOrdinal } from "react-ordinals";
+
+const App = () => {
+	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
+	return (
+		<section>{numberRange.map((number) => NumberOrdinal(number))}</section>
+	);
 };
 
 export default App;
@@ -55,28 +70,45 @@ export default App;
 
 ### WordOrdinal
 
-The `WordOrdinal` component is responsible for converting numbers into their ordinal form. 
+The `WordOrdinal` component is responsible for converting numbers into their ordinal form.
 
 **Props:**
 
 - `number` (required): The number to be converted into an ordinal form.
-- `shouldBeTitleCase` (required): A boolean indicating whether the result should be in title 
+- `capitalizeFirstLetter` (required): A boolean indicating whether the result should be in title case format
 
 ## Examples
 
-### Example 1: Word Ordinal
+### Example 1: Word Ordinal("first", "second", "third")
 
 ```jsx
+import React from "react";
+import { WordOrdinal } from "react-ordinals";
+
 const App = () => {
-  return (
-    <section>
-      <WordOrdinal
-        number={14}
-        shouldBeTitleCase={false}
-      />  
-    </section>
-  );
+	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
+	return <section>{numberRange.map((number) => WordOrdinal(number))}</section>;
 };
+
+export default App;
+```
+
+### Example 2: Number Ordinal("1ST", "2ND", "3RD")
+
+```jsx
+import React from "react";
+import { NumberOrdinal } from "react-ordinals";
+
+const App = () => {
+	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
+	return (
+		<section>
+			{numberRange.map((number) => NumberOrdinal(number, { capitalize: true }))}
+		</section>
+	);
+};
+
+export default App;
 ```
 
 ## Contributing
