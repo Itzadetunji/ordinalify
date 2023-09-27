@@ -8,7 +8,7 @@ interface WordOrdinalOptions {
 	capitalizeFirstLetter: boolean;
 }
 
-export type WordOrdinalType = (number: number, options: WordOrdinalOptions) => string;
+export type WordOrdinalType = (number: number, options?: WordOrdinalOptions) => string;
 
 const WordOrdinal: WordOrdinalType = (number, options) => {
 	const convertNumberToOrdinal = (number: number) => {
