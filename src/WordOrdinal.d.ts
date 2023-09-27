@@ -1,6 +1,6 @@
-import { WordOrdinalProps } from "./WordOrdinal";
+import { WordOrdinalType } from "./WordOrdinal";
 declare module "WordOrdinal" {
-	const WordOrdinal: (props: WordOrdinalProps) => string;
+	const WordOrdinal: WordOrdinalType;
 
 	export default WordOrdinal;
 }

@@ -4,14 +4,13 @@ import {
 	firstWordToTitle,
 } from "./Cases";
 
-export interface WordOrdinalProps {
-	number: number;
-	options?: {
-		capitalizeFirstLetter: boolean;
-	};
+interface WordOrdinalOptions {
+	capitalizeFirstLetter: boolean;
 }
 
-const WordOrdinal = ({ number, options }: WordOrdinalProps) => {
+export type WordOrdinalType = (number: number, options: WordOrdinalOptions) => string;
+
+const WordOrdinal: WordOrdinalType = (number, options) => {
 	const convertNumberToOrdinal = (number: number) => {
 		let position: string;
 		if (number > 90) return "Invalid range";

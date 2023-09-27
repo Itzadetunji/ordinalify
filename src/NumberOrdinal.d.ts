@@ -1,7 +1,7 @@
-import { NumberOrdinalProps } from "./NumberOrdinal";
+import { NumberOrdinalType } from "./NumberOrdinal";
 
 declare module "NumberOrdinal" {
-	const NumberOrdinal: (props: NumberOrdinalProps) => string;
+	const NumberOrdinal: NumberOrdinalType;
 
 	export default NumberOrdinal;
 }
