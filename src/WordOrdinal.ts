@@ -32,7 +32,7 @@ const WordOrdinal: WordOrdinalType = (number, options) => {
 		return position;
 	};
 
-	return options.capitalizeFirstLetter
+	return options?.capitalizeFirstLetter
 		? firstWordToTitle(convertNumberToOrdinal(number))
 		: convertNumberToOrdinal(number);
 };
