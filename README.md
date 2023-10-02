@@ -1,40 +1,42 @@
-# React Ordinals
+# Ordinalify
 
-[![npm version](https://img.shields.io/npm/v/react-switch.svg)](https://www.npmjs.com/package/react-ordinals)
+[![npm version](https://img.shields.io/npm/v/react-switch.svg)](https://www.npmjs.com/package/ordinalify)
 
-[![license](https://img.shields.io/npm/l/react-switch.svg)](https://github.com/your-username/react-ordinals/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/react-switch.svg)](https://github.com/itzadetunji/ordinalify/blob/main/LICENSE)
 
-React Ordinals is a package used to get number ordinals in react apps
+Ordinalify is a package used to get number ordinals in javascript apps.
+
+Ordinals: are grammatical or numerical indicators that express the position or order of items in a series, such as "1st" for first, "2nd" for second, and so on.
 
 ## Installation
 
 Install the package using npm:
 
 ```shell
-npm install react-ordinals
+npm install ordinalify
 ```
 
 Install the package using yarn:
 
 ```shell
-yarn add react-ordinals
+yarn add ordinalify
 ```
 
 Install the package using bun:
 
 ```shell
-bun add react-ordinals
+bun add ordinalify
 ```
 
 ## Usage
 
-Here's a basic example of how to use `react-ordinals`:
+Here's a basic example of how to use `ordinalify`:
 
 Word Ordinals e.g("First", "Second", "Third", "Fourth"):
 
 ```jsx
 import React from "react";
-import { WordOrdinal } from "react-ordinals";
+import { WordOrdinal } from "ordinalify";
 
 const App = () => {
 	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
@@ -54,7 +56,7 @@ Number Ordinals e.g("1st", "2nd", "3rd", "4th"):
 
 ```jsx
 import React from "react";
-import { NumberOrdinal } from "react-ordinals";
+import { NumberOrdinal } from "ordinalify";
 
 const App = () => {
 	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
@@ -83,7 +85,7 @@ The `WordOrdinal` component is responsible for converting numbers into their ord
 
 ```jsx
 import React from "react";
-import { WordOrdinal } from "react-ordinals";
+import { WordOrdinal } from "ordinalify";
 
 const App = () => {
 	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
@@ -97,7 +99,7 @@ export default App;
 
 ```jsx
 import React from "react";
-import { NumberOrdinal } from "react-ordinals";
+import { NumberOrdinal } from "ordinalify";
 
 const App = () => {
 	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
