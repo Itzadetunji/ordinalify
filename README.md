@@ -52,7 +52,7 @@ const App = () => {
 export default App;
 ```
 
-Number Ordinals e.g("1st", "2nd", "3rd", "4th"):
+Number Ordinals e.g ("1st", "2nd", "3rd", "4th"):
 
 ```jsx
 import React from "react";
@@ -68,20 +68,18 @@ const App = () => {
 export default App;
 ```
 
-## API
+## API (Parameters)
 
 ### WordOrdinal
 
-The `WordOrdinal` component is responsible for converting numbers into their ordinal form.
+The `WordOrdinal` function is responsible for converting numbers into their ordinal form in word form e.g "Fifth", "Twenty-Nine".
 
 **Props:**
 
 - `number` (required): The number to be converted into an ordinal form.
 - `capitalizeFirstLetter` (required): A boolean indicating whether the result should be in title case format
 
-## Examples
-
-### Example 1: Word Ordinal("first", "second", "third")
+### Example: Word Ordinal("first", "second", "third")
 
 ```jsx
 import React from "react";
@@ -95,7 +93,11 @@ const App = () => {
 export default App;
 ```
 
-### Example 2: Number Ordinal("1ST", "2ND", "3RD")
+### NumberOrdinal
+
+The `NumberOrdinal` function is responsible for converting numbers into their ordinal form in number form e.g "5TH", "29TH".
+
+### Example: Number Ordinal ("1ST", "2ND", "3RD")
 
 ```jsx
 import React from "react";
@@ -112,6 +114,7 @@ const App = () => {
 
 export default App;
 ```
+
 
 ## Contributing
 
