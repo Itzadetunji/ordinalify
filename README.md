@@ -13,7 +13,7 @@ Ordinals: are grammatical or numerical indicators that express the position or o
 Install the package using npm:
 
 ```shell
-npm i ordinalify
+npm install ordinalify
 ```
 
 Install the package using yarn:
