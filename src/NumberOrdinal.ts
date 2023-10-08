@@ -32,18 +32,6 @@ const transformText: ResultTransformer = (text, options) => {
 		if (options.lowercase) {
 			text = text.toLowerCase();
 		}
-
-		if (options.subscript) {
-			const sub = text.slice(text.length - 2);
-			const prefix = text.slice(0, text.length - 2);
-			text = `${prefix}<sub>${sub}</sub>`;
-		}
-
-		if (options.superscript) {
-			const sup = text.slice(text.length - 2);
-			const newText = text.slice(0, text.length - 2);
-			text = `${newText}<sup>${sup}</sup>`;
-		}
 	}
 
 	return text;
