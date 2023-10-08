@@ -7,10 +7,12 @@ export interface NumberOrdinalOptions {
 	superscript?: boolean;
 }
 
-export const NumberOrdinal = (
+export type NumberOrdinalType = (
 	number: number,
-	options: NumberOrdinalOptions
-) => {
+	options?: NumberOrdinalOptions
+) => string;
+
+export const NumberOrdinal: NumberOrdinalType = (number, options) => {
 	return number <= 0
 		? "Invalid range"
 		: transformText(convertNumberToNumberOrdinal(number), options);

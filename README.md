@@ -22,72 +22,76 @@ Install the package using yarn:
 yarn add ordinalify
 ```
 
-Install the package using bun:
-
-```shell
-bun add ordinalify
-```
-
 ## Usage
 
 Here's a basic example of how to use `ordinalify`:
 
 Word Ordinals e.g("First", "Second", "Third", "Fourth"):
 
-```jsx
-import React from "react";
+```javascript
 import { WordOrdinal } from "ordinalify";
 
-const App = () => {
-	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
-	return (
-		<section>
-			{numberRange.map((number) =>
-				WordOrdinal(number, { capitalizeFirstLetter: true })
-			)}
-		</section>
-	);
-};
+const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
 
-export default App;
+numberRange.map((number) =>
+	console.log(WordOrdinal(number, { capitalizeFirstLetter: true }))
+);
 ```
 
-Number Ordinals e.g ("1st", "2nd", "3rd", "4th"):
+Number Ordinals e.g ("1ST", "2ND", "3RD", "4TH"):
 
-```jsx
-import React from "react";
+```javascript
 import { NumberOrdinal } from "ordinalify";
 
-const App = () => {
-	const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
-	return (
-		<section>{numberRange.map((number) => NumberOrdinal(number))}</section>
-	);
-};
+const numberRange = Array.from({ length: 4 }, (_, index) => index + 1);
 
-export default App;
+numberRange.map((number) =>
+	console.log(NumberOrdinal(number, { capitalize: true }))
+);
 ```
 
 ## API (Parameters)
 
 ### WordOrdinal
 
-The `WordOrdinal` function is responsible for converting numbers into their ordinal form in word form e.g "Fifth", "Twenty-Nine".
+The `WordOrdinal` function/component is responsible for converting numbers into their ordinal form in word form e.g "Fifth", "Twenty-Nine".
 
 **Props:**
 
 - `number` (required): The number to be converted into an ordinal form.
-- `capitalizeFirstLetter` (required): A boolean indicating whether the result should be in title case format
+- `options` (optional): An object containing the following properties:
+  - `capitalizeFirstLetter` (optional): A boolean indicating whether the result should be in title case format. This can be used as the second parameter using node or the second prop with the name options and the key value name "capitalizeFirstLetter"
 
 ### Example: Word Ordinal("first", "second", "third")
 
+In Node:
+
+```javascript
+const { WordOrdinal } = require("ordinalify");
+
+const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
+numberRange.map((number) => console.log(WordOrdinal(number)));
+```
+
+In React:
+
 ```jsx
 import React from "react";
-import { WordOrdinal } from "ordinalify";
+import { WordOrdinal } from "ordinalify/dist/react";
 
 const App = () => {
 	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
-	return <section>{numberRange.map((number) => WordOrdinal(number))}</section>;
+	return (
+		<section>
+			{numberRange.map((number, index) => (
+				<WordOrdinal
+					key={index}
+					number={number}
+					options={{ capitalizeFirstLetter: true }}
+				/>
+			))}
+		</section>
+	);
 };
 
 export default App;
@@ -95,19 +99,46 @@ export default App;
 
 ### NumberOrdinal
 
-The `NumberOrdinal` function is responsible for converting numbers into their ordinal form in number form e.g "5TH", "29TH".
+The `NumberOrdinal` function/component is responsible for converting numbers into their ordinal form in number form e.g "5TH", "29TH".
+
+**Props:**
+
+- `number` (required): The number to be converted into an ordinal form.
+- `options` (optional): An object containing the following properties:
+  - `capitalize` (optional): A boolean indicating whether the result should be in title case format. This can be used as the second parameter using node or the second prop with the name options and the key value name "capitalizeFirstLetter"
+  - `lowercase` (optional): A boolean indicating whether the result should be in lowercase format.
+  - `subscript` (optional): A boolean indicating whether the result should be in subscript format. (Note: Subscript does not work in Node environment)
+  - `superscript` (optional): A boolean indicating whether the result should be in superscript format. (Note: Superscript does not work in Node environment)
 
 ### Example: Number Ordinal ("1ST", "2ND", "3RD")
 
+In Node
+
+```javascript
+const { NumberOrdinal } = require("ordinalify");
+
+const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
+numberRange.map((number) =>
+	console.log(NumberOrdinal(number, { capitalize: true }))
+);
+```
+
+In React
+
 ```jsx
 import React from "react";
-import { NumberOrdinal } from "ordinalify";
+import { NumberOrdinal } from "ordinalify/dist/react";
 
 const App = () => {
 	const numberRange = Array.from({ length: 3 }, (_, index) => index + 1);
 	return (
 		<section>
-			{numberRange.map((number) => NumberOrdinal(number, { capitalize: true }))}
+			{numberRange.map((number) => (
+				<NumberOrdinal
+					number={number}
+					options={{ capitalize: true }}
+				/>
+			))}
 		</section>
 	);
 };
@@ -115,7 +146,6 @@ const App = () => {
 export default App;
 ```
 
-
 ## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+This Markdown document is well-structured and provides clear instructions for using the `ordinalify` package. If you have any specific concerns or requests, feel free to let me know!
