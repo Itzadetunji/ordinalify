@@ -4,7 +4,7 @@ import {
 	firstWordToTitle,
 } from "./Cases";
 
-interface WordOrdinalOptions {
+export interface WordOrdinalOptions {
 	capitalizeFirstLetter: boolean;
 }
 
@@ -13,7 +13,7 @@ export type WordOrdinalType = (
 	options?: WordOrdinalOptions
 ) => string;
 
-const WordOrdinal: WordOrdinalType = (number, options) => {
+export const WordOrdinal: WordOrdinalType = (number, options) => {
 	const convertNumberToOrdinal = (number: number) => {
 		let position: string;
 		if (number === 100) {

@@ -1,18 +1,16 @@
 import { convertNumberToNumberOrdinal } from "./Cases";
 
-interface NumberOrdinalOptions {
+export interface NumberOrdinalOptions {
 	capitalize?: boolean;
 	lowercase?: boolean;
 	subscript?: boolean;
 	superscript?: boolean;
 }
 
-export type NumberOrdinalType = (
+export const NumberOrdinal = (
 	number: number,
-	options?: NumberOrdinalOptions
-) => string;
-
-const NumberOrdinal: NumberOrdinalType = (number, options) => {
+	options: NumberOrdinalOptions
+) => {
 	return number <= 0
 		? "Invalid range"
 		: transformText(convertNumberToNumberOrdinal(number), options);
