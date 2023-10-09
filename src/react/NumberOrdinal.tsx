@@ -39,13 +39,15 @@ const NumberOrdinal: React.FC<NumberOrdinalType> = ({ number, options }) => {
 		);
 	};
 
-	if (options.subscript) {
-		const text = NumberOrdinalFn(number, options);
-		return <span>{isSubScript(text)}</span>;
-	}
-	if (options.superscript) {
-		const text = NumberOrdinalFn(number, options);
-		return <span>{isSuperScript(text)}</span>;
+	if (options) {
+		if (options.subscript) {
+			const text = NumberOrdinalFn(number, options);
+			return <span>{isSubScript(text)}</span>;
+		}
+		if (options.superscript) {
+			const text = NumberOrdinalFn(number, options);
+			return <span>{isSuperScript(text)}</span>;
+		}
 	}
 
 	return <span>{NumberOrdinalFn(number, options)}</span>;
