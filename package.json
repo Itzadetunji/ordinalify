@@ -1,10 +1,9 @@
 {
 	"name": "ordinalify",
-	"version": "0.8.2",
+	"version": "0.8.3",
 	"description": "A react component for getting ordinal numbers",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"deprecated": "Versions below 0.8.2 are deprecated. Please upgrade to the latest version.",
 	"files": [
 		"dist"
 	],
